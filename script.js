@@ -1,9 +1,8 @@
 // Canvas Setup
 const c = document.querySelector("canvas");
 const ctx = c.getContext("2d");
-const padding = 100;
-c.width = window.innerWidth - padding;
-c.height = window.innerHeight - padding;
+c.width = window.innerWidth;
+c.height = window.innerHeight;
 
 // Drawing setup
 const colours = ["red", "orange", "yellow", "green", "blue", "purple"];
