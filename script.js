@@ -20,7 +20,7 @@ c.addEventListener("mouseup", function() {
 
 c.addEventListener("mousemove", function(event) {
 	if (!mouseDown) return;
-	ctx.fillRect(event.clientX, event.clientY, size, size);
+	ctx.fillRect(event.clientX - size, event.clientY - size, size, size);
 	debug();
 });
 
