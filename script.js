@@ -8,7 +8,7 @@ c.height = window.innerHeight - padding;
 // Drawing setup
 const colours = ["red", "orange", "yellow", "green", "blue", "purple"];
 let colour = 0;
-let radius = 10;
+let size = 10;
 let mouseDown = 0;
 
 // mouse functions
@@ -21,14 +21,14 @@ c.addEventListener("mouseup", function() {
 
 c.addEventListener("mousemove", function(event) {
 	if (!mouseDown) return;
-	ctx.fillRect(event.clientX, event.clientY, radius, radius);
+	ctx.fillRect(event.clientX, event.clientY, size, size);
 	debug();
 });
 
 addEventListener("wheel", function(event) {
-	radius += event.deltaY;
-	if (radius <= 10) radius = 10;
-	if (radius >= 50) radius = 50;
+	size += event.deltaY;
+	if (size <= 10) size = 10;
+	if (size >= 50) size = 50;
 });
 
 addEventListener("keydown", function() {
@@ -37,5 +37,5 @@ addEventListener("keydown", function() {
 });
 
 function debug() {
-	console.log(`Colour: ${colour}, Radius: ${radius}`);
+	console.log(`Colour: ${colour}, size: ${size}`);
 }
