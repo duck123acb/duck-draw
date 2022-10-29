@@ -1,2 +1,2 @@
 # duck-draw
-draw with this or u suck at drawing
+draw with this or ur suck at drawing
