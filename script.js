@@ -1,8 +1,9 @@
 // Canvas Setup
 const c = document.querySelector("canvas");
 const ctx = c.getContext("2d");
-c.width = window.innerWidth;
-c.height = window.innerHeight;
+const padding = 50;
+c.width = window.innerWidth - padding;
+c.height = window.innerHeight - padding;
 
 // Drawing setup
 const colours = ["red", "orange", "yellow", "green", "blue", "purple"];
@@ -19,8 +20,9 @@ c.addEventListener("mouseup", function() {
 });
 
 c.addEventListener("mousemove", function(event) {
-	if (!mouseDown) return;
-	ctx.fillRect(event.clientX - size, event.clientY - size, size, size);
+	if (mouseDown) {
+		ctx.fillRect(event.clientX, event.clientY, size, size);
+	}
 	debug();
 });
 
@@ -37,4 +39,9 @@ addEventListener("keydown", function() {
 
 function debug() {
 	console.log(`Colour: ${colour}, size: ${size}`);
+}
+
+function downloadImg(name) {
+	const image = c.toDataURL("image/png").replace("image/png", "image/octet-stream");
+	saveAs(image,`${name}.png`);
 }
