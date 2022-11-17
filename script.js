@@ -20,10 +20,16 @@ c.addEventListener("mouseup", function() {
 });
 
 c.addEventListener("mousemove", function(event) {
-	if (mouseDown) {
-		ctx.fillRect(event.clientX, event.clientY, size, size);
-	}
-	debug();
+	if (!mouseDown) return;
+	let mouseX = event.clientX;
+	let mouseY = event.clientY;
+	// let mouseX = lastX + 1;
+	// let mouseY = lastY + 1;
+	ctx.globalCompositeOperation="source-over";
+	ctx.moveTo(mouseX, mouseY);
+	ctx.lineTo(mouseX, mouseY);
+	ctx.stroke();   
+	// debug();
 });
 
 addEventListener("wheel", function(event) {
