@@ -23,8 +23,8 @@ c.addEventListener("mousemove", function(event) {
 	if (!mouseDown) return;
 	let mouseX = event.clientX;
 	let mouseY = event.clientY;
-	let mouseX2 = lastX - 1;
-	let mouseY2 = lastX - 1;
+	let mouseX2 = mouseX - 1;
+	let mouseY2 = mouseY - 1;
 	ctx.globalCompositeOperation="source-over";
 	ctx.moveTo(mouseX2, mouseY2);
 	ctx.lineTo(mouseX, mouseY);
